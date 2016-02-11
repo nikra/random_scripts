@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# -c aaacook creates a file named aaacook and stores the cookies set in the response on http://URL1
+# -d The content following this switch, goes as the body of a POST HTTP request.
+# -b aaacook will send HTTP request by sending the cookies set earlier.
+curl  -c aaacook -d "login=sqladmin&passwd=freebsd" -k http://URL1 -v
+curl  -b aaacook -c aaacook -k http://URL2 -v
+curl  -b aaacook -d "BODYBODY" -H "Content-type:text" -k http://URL3 -v
+
